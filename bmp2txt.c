@@ -114,7 +114,8 @@ int main(int argc, char **argv) {
     printf("%s\n\n", COPYRIGHT);
 
     if (argc < 3) {
-        die("No files specified!\nUse: bmp2txt <input.bmp> <output-file>\n", EXIT_INVALID_ARGS);
+        printf("Invalid arguments.\n%s\n", USAGE);
+        exit(EXIT_INVALID_ARGS);
     }
 
     filename = argv[1];

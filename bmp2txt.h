@@ -24,13 +24,11 @@
 #define BMP2TXT_BMP2TXT_H
 
 
-#include <dtrace.h>
-
-
 #define TITLE       "Bitmap to Text Converter for SPIN GFX Driver"
 #define VERSION     "Version 0.0.9a"
 #define VENDOR      "Copyright 2015-2017 Lindenberg Research Tec."
 #define COPYRIGHT   "All rights MIT licenced."
+#define USAGE       "Use: bmp2txt <input.bmp> <output-file> [SAMPLE_TEXT]"
 
 
 /*
