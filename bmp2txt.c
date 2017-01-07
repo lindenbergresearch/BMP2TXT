@@ -106,7 +106,6 @@ int main(int argc, char **argv) {
     BITMAP_HEADER *header;
     u_int8_t *bitmap;
 
-
     /* print program info */
     printf("%s\n", TITLE);
     printf("%s\n", VERSION);
@@ -157,13 +156,10 @@ int main(int argc, char **argv) {
     bitmap = bmp2chararray(abs(header->width), abs(header->height), bitmap);
 
     printf("Dump font data to file: %s ... ", argv[2]);
-
-
     if (dump_spin(argv[2], bitmap) != BMP_SUCCESS) {
         printf("FAILED\n");
         die("Unable to write output file!", EXIT_INVALID_FILE);
     }
-
     printf("OK\n");
 
 
