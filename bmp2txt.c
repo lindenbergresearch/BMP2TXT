@@ -13,10 +13,10 @@
  *  Copyright 2016 Lindenberg Research Tec.
  *  All rights MIT licenced.
  *
- *  DATE			:	27/12/2016 03:39
- *  AUTHOR		    :	patrick@heapdump.com
+ *  DATE            :   27/12/2016 03:39
+ *  AUTHOR          :   patrick@heapdump.com
  *
- *  DESCRIPTION	    :   Bitmap to text file converter for including bitmap-fonts in Propeller SPIN
+ *  DESCRIPTION     :   Bitmap to text file converter for including bitmap-fonts in Propeller SPIN
  *
  */
 #include <stdio.h>
