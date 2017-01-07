@@ -113,11 +113,11 @@ int main(int argc, char **argv) {
     printf("%s\n", VENDOR);
     printf("%s\n\n", COPYRIGHT);
 
-    if (argc < 2) {
-        die("No file specified!\n", EXIT_INVALID_ARGS);
+    if (argc < 3) {
+        die("No files specified!\nUse: bmp2txt <input.bmp> <output-file>\n", EXIT_INVALID_ARGS);
     }
 
-    filename = "images/fixed_8x16.bmp";//argv[1];
+    filename = argv[1];
 
     if (loadimage(filename, &bitmap_data) != BMP_SUCCESS) {
         die("Unable to read bitmap file!", EXIT_INVALID_FILE);
@@ -155,8 +155,8 @@ int main(int argc, char **argv) {
     /* convert raw bitmap data to linear bitmap */
     bitmap = bmp2chararray(abs(header->width), abs(header->height), bitmap);
 
-    fnt_print(bitmap, "Test!");
-    dump_spin("out.txt", bitmap);
+    //fnt_print(bitmap, "Test!");
+    dump_spin(argv[2], bitmap);
 
     exit(EXIT_SUCCESS);
 }
