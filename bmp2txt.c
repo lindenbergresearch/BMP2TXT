@@ -155,8 +155,22 @@ int main(int argc, char **argv) {
     /* convert raw bitmap data to linear bitmap */
     bitmap = bmp2chararray(abs(header->width), abs(header->height), bitmap);
 
-    //fnt_print(bitmap, "Test!");
-    dump_spin(argv[2], bitmap);
+    printf("Dump font data to file: %s ... ", argv[2]);
+
+
+    if (dump_spin(argv[2], bitmap) != BMP_SUCCESS) {
+        printf("FAILED\n");
+        die("Unable to write output file!", EXIT_INVALID_FILE);
+    }
+
+    printf("OK\n");
+
+
+    if (argc > 3) {
+        for (int i = 2; i < argc; ++i) {
+
+        }
+    }
 
     exit(EXIT_SUCCESS);
 }
