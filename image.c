@@ -13,10 +13,10 @@
  *  Copyright 2016 Lindenberg Research Tec.
  *  All rights MIT licenced.
  *
- *  DATE			:	30/12/2016 08:06
- *  AUTHOR		    :	patrick@heapdump.com
+ *  DATE            :   30/12/2016 08:06
+ *  AUTHOR          :   patrick@heapdump.com
  *
- *  DESCRIPTION	    :	Image library
+ *  DESCRIPTION     :   Image library
  *
  */
 #include <stdio.h>

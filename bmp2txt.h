@@ -13,10 +13,10 @@
  *  Copyright 2015-2017 Lindenberg Research Tec.
  *  All rights MIT licenced.
  *
- *  DATE			:	27/12/2016 03:39
- *  AUTHOR		    :	patrick@heapdump.com
+ *  DATE            :   27/12/2016 03:39
+ *  AUTHOR          :   patrick@heapdump.com
  *
- *  DESCRIPTION	    :	Header file for converter
+ *  DESCRIPTION     :   Header file for converter
  *
  */
 
