@@ -3,7 +3,7 @@
 *Version 0.0.9a*  
 
 __This is still an alpha version, just for testing purpose.__
-Written for creating fonts for LRT/OS. All rights MIT licenced.
+Written for creating fonts for LRT/OS. All rights MIT licensed.
 
 * supports 8x16 per character bitmap fonts *(DOS like)*
 * supports Windows bitmap file format encoded with a 1-Bit color depth
