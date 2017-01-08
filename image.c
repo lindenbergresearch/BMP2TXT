@@ -10,7 +10,7 @@
  *
  *  Operating System I
  *
- *  Copyright 2016 Lindenberg Research Tec.
+ *  Copyright 2015-2017 Lindenberg Research Tec.
  *  All rights MIT licenced.
  *
  *  DATE            :   30/12/2016 08:06
@@ -79,22 +79,6 @@ static void fnt_println(const u_int8_t *data, const u_int8_t line) {
 
     for (int i = 0; i < CHAR_WIDTH; ++i) {
         row[i] ? printf(STDOUT_PIXEL_ON) : printf(STDOUT_PIXEL_OFF);
-    }
-}
-
-
-/*!
- * @brief Prints  a 1-bit 8x16 bitmap to console
- * @param data Pointer to a 16 byte buffer
- * @param offset Buffer offset in bytes
- */
-static void printc(u_int8_t *data, u_int16_t offset) {
-    for (int i = 0; i < 16; ++i) {
-        u_int8_t *row = byte2bitarray(data[i + offset]);
-        printf("\n");
-        for (int j = 0; j < 8; ++j) {
-            row[j] ? printf("██") : printf("  ");
-        }
     }
 }
 
@@ -221,10 +205,9 @@ u_int8_t parseimage(BITMAP_HEADER *header) {
  * @param bmpdata Pointer to plain bitmap data
  * @return Pointer to indexed char array
  */
-u_int8_t *bmp2chararray(const int width, const int height, u_int8_t *bmpdata) {
+u_int8_t *bmp2chararray(const u_int16_t width, const u_int16_t height, u_int8_t *bmpdata) {
     u_int8_t *buffer;
     int cx = width / 8;
-    //int cy = height / 16;
 
     /* allocate memory for data array */
     buffer = malloc(CHAR_COUNT * BYTE_PER_CHAR);
@@ -240,7 +223,6 @@ u_int8_t *bmp2chararray(const int width, const int height, u_int8_t *bmpdata) {
             int offset = scanline % BYTE_PER_CHAR;
 
             buffer[index * BYTE_PER_CHAR + offset] = bmpdata[pos++];
-            //printf("x=[%3i]   scanline=[%3i]   idx=[%3i]   offset=[%3i]   position=[%4i]\n", x, scanline, index, offset, pos);
         }
     }
 
@@ -255,7 +237,7 @@ u_int8_t *bmp2chararray(const int width, const int height, u_int8_t *bmpdata) {
  * @param bmpdata Pointer to bitmap data
  * @return Flipped bitmap data
  */
-u_int8_t *flipy(const int width, const int height, u_int8_t *bmpdata) {
+u_int8_t *flipy(const u_int16_t width, const u_int16_t height, u_int8_t *bmpdata) {
     u_int8_t *buffer;
     int cx = width / 8;
 

@@ -10,7 +10,7 @@
  *
  *  Operating System I
  *
- *  Copyright 2016 Lindenberg Research Tec.
+ *  Copyright 2015-2017 Lindenberg Research Tec.
  *  All rights MIT licenced.
  *
  *  DATE            :   30/12/2016 08:06
@@ -67,8 +67,8 @@ typedef struct {
 
 
 u_int8_t loadimage(const char *filename, u_int8_t **buffer);
-u_int8_t *bmp2chararray(int width, int height, u_int8_t *bmpdata);
-u_int8_t *flipy(const int width, const int height, u_int8_t *bmpdata);
+u_int8_t *bmp2chararray(const u_int16_t width, const u_int16_t height, u_int8_t *bmpdata);
+u_int8_t *flipy(const u_int16_t width, const u_int16_t height, u_int8_t *bmpdata);
 void mdump(u_int8_t *data, u_int16_t length, u_int8_t width);
 void fnt_print(u_int8_t *data, const char *string);
 u_int8_t parseimage(BITMAP_HEADER *header);

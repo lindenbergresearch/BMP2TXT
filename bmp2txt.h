@@ -28,12 +28,10 @@
 #define VERSION     "Version 0.0.9a"
 #define VENDOR      "Copyright 2015-2017 Lindenberg Research Tec."
 #define COPYRIGHT   "All rights MIT licenced."
-#define USAGE       "Use: bmp2txt <input.bmp> <output-file> [SAMPLE_TEXT]"
+#define USAGE       "Use: bmp2txt <input.bmp> <output-file> [SAMPLE_TEXT, ...]"
 
 
-/*
- * Exit codes passed back to OS
- */
+/* Exit codes for error handling by OS */
 #define EXIT_SUCCESS            0x00    /* OK, no errors */
 #define EXIT_INVALID_ARGS       0x01    /* Malformed program arguments */
 #define EXIT_EXCEEDED_FILESIZE  0x02    /* File exceeds maximum size */
@@ -42,10 +40,8 @@
 #define EXIT_NO_MEMORY          0x04    /* Memory allocation failed */
 
 
-//unsigned char byterev(int wert);
-//char *strrev(const char *string);
 void die(const char *msg, const int exitcode);
-
+u_int8_t dump_spin(const char *filename, const u_int8_t *bitmap);
 
 #endif /* BMP2TXT_BMP2TXT_H */
 

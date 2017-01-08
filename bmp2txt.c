@@ -123,19 +123,13 @@ int main(int argc, char **argv) {
         die("Unable to read bitmap file!", EXIT_INVALID_FILE);
     }
 
-    //fnt_print(bitmap_data + 4, "Lindenberg Research Tec.");
-    //dump_spin("out.txt", bitmap_data + 4);
-
-    //exit(1);
-
-
     /* map raw data to structure */
     header = (BITMAP_HEADER *)bitmap_data;
 
     printf("Filename  : %s\n", filename);
     printf("ID        : 0x%04X\n", header->signature);
     printf("WxH       : %ipx x %ipx\n", abs(header->width), abs(header->height));
-    printf("Chars     : %i x %i\n", abs(header->width) / 8, abs(header->height) / 16);
+    printf("Chars     : %i x %i\n", abs(header->width) / CHAR_WIDTH, abs(header->height) / CHAR_HEIGHT);
     printf("Size      : %i Bytes\n", header->file_size);
     printf("Offset    : %i Bytes\n", header->data_offset);
     printf("bpp       : %i\n", header->bpp);
