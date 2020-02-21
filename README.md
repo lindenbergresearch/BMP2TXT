@@ -1,5 +1,5 @@
 # BMP2TXT
-####Bitmap to Textfile converter for 1-Bit bitmap fonts for usage in Propeller SPIN DAT sections.
+#### Bitmap to Textfile converter for 1-Bit bitmap fonts for usage in Propeller SPIN DAT sections.
 *Version 0.0.9a*  
 
 __This is still an alpha version, just for testing purpose.__
